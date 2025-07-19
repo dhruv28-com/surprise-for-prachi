@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  max-width: 90%;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.volume-popup {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #ffe600;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 20px;
+  padding: 14px 30px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 2px 2px 10px #00000060;
+}
+
+#yes-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+#yes-btn:hover {
+  transform: scale(1.1);
+  background-color: #45a049;
+}
+
+#no-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+#no-btn:hover {
+  background-color: #e53935;
+}

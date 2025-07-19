@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just for You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      flex-direction: column;
+    }
+    .slideshow {
+      max-width: 90%;
+      max-height: 90vh;
+    }
+    .slideshow img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #ff5e78;
+      display: none;
+      animation: fade 1s ease-in-out;
+    }
+  
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slideshow">
+    <img src="images/pic1.jpg" class="slide" style="display: block;">
+    <img src="images/pic2.jpg" class="slide">
+    <img src="images/pic3.jpg" class="slide">
+    <img src="images/pic4.jpg" class="slide">
+    <img src="images/pic5.jpg" class="slide">
+    <img src="images/pic6.jpg" class="slide">
+    <img src="images/pic7.jpg" class="slide">
+    <img src="images/pic8.jpg" class="slide">
+    <img src="images/pic9.jpg" class="slide">
+  </div>
+
+  <audio autoplay loop id="bg-music">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button onclick="window.location.href='wishes.html'" style="position: fixed;
+     top: 20px;
+     right: 20px;
+     padding: 10px 20px;
+     font-size: 1em;
+     background-color: rgba(0,0,0,0.6);
+     color: #fff;
+     border: none;
+     border-radius: 10px;
+     cursor: pointer;
+     z-index: 9999;">Skip 🎆</button>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+      slides.forEach((slide, index) => {
+        slide.style.display = "none";
+      });
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].style.display = "block";
+    }
+
+    setInterval(showSlides, 3000);
+  </script>
+
+</body>
+</html>
